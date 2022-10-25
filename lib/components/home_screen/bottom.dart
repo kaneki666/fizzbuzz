@@ -13,7 +13,6 @@ class HomeScreenBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Expanded(
       flex: 9,
       child: Consumer<FizzBuzzViewModel>(
