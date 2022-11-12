@@ -48,7 +48,9 @@ class _MyAppState extends State<MyApp> {
         builder: (context, model, child) => model.getIsLoading
             ? const CustomLoadingIndicator()
             : MaterialApp(
-                theme: AppTheme.themeData(model.getDarkTheme, context),
+                theme: AppTheme.themeData(
+                  model.getDarkTheme,
+                ),
                 debugShowCheckedModeBanner: false,
                 title: 'FizzBuzz',
                 home: const HomeScreen(),

@@ -16,6 +16,7 @@ class AppTheme {
   static Color bgColorDark = const Color(0xff212121);
   static Color darkLight = const Color(0xff323232);
   static Color whiteLight = const Color(0xffe7e7e7);
+
   //text styles
   static TextTheme textThemeDark = TextTheme(
     bodyMedium: TextStyle(color: bgColorLight),
@@ -29,7 +30,9 @@ class AppTheme {
     titleSmall: TextStyle(color: bgColorDark, fontSize: sizeML),
   );
 
-  static TextStyle hintStyle(Color color, BuildContext context) {
+  static TextStyle hintStyle(
+    Color color,
+  ) {
     return TextStyle(color: color);
   }
 
@@ -53,8 +56,22 @@ class AppTheme {
     ),
   );
 
+  //gradient
+
+  static LinearGradient gradientText = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    stops: const [0.45, 1],
+    colors: [
+      Colors.red.withOpacity(1),
+      Colors.amber.withOpacity(0.8),
+    ],
+  );
+
   //themeapp
-  static ThemeData themeData(bool isDarkTheme, BuildContext context) {
+  static ThemeData themeData(
+    bool isDarkTheme,
+  ) {
     return ThemeData(
       fontFamily: "Silkscreen-Regular",
       primaryColor: isDarkTheme ? bgColorDark : bgColorLight,
@@ -68,8 +85,12 @@ class AppTheme {
         border: InputBorder.none,
         enabledBorder: InputBorder.none,
         labelStyle: isDarkTheme
-            ? hintStyle(bgColorLight, context)
-            : hintStyle(bgColorDark, context),
+            ? hintStyle(
+                bgColorLight,
+              )
+            : hintStyle(
+                bgColorDark,
+              ),
       ),
       textTheme: isDarkTheme ? textThemeDark : textThemeLight,
     );

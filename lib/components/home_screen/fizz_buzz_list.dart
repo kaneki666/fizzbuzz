@@ -28,19 +28,24 @@ class _FizzBuzzListState extends State<FizzBuzzList> {
     ThemeViewModel provider =
         Provider.of<ThemeViewModel>(context, listen: false);
 
-    controller.addListener(() {
-      if (provider.getStartAniamtion == false) {
-        if (controller.hasClients) {
-          provider.setScrollPosition = controller.position.pixels;
+    controller.addListener(
+      () {
+        if (provider.getStartAniamtion == false) {
+          if (controller.hasClients) {
+            provider.setScrollPosition = controller.position.pixels;
+          }
         }
-      }
-    });
+      },
+    );
+
     if (provider.getStartAniamtion == true && provider.getScrollPosition > 0) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (controller.hasClients) {
-          controller.jumpTo(provider.getScrollPosition);
-        }
-      });
+      WidgetsBinding.instance.addPostFrameCallback(
+        (_) {
+          if (controller.hasClients) {
+            controller.jumpTo(provider.getScrollPosition);
+          }
+        },
+      );
     }
   }
 
@@ -67,7 +72,9 @@ class _FizzBuzzListState extends State<FizzBuzzList> {
                     controller: controller,
                     physics: const AlwaysScrollableScrollPhysics(),
                     padding: EdgeInsets.only(
-                        top: AppTheme.sizeM, bottom: AppTheme.sizeM),
+                      top: AppTheme.sizeM,
+                      bottom: AppTheme.sizeM,
+                    ),
                     itemBuilder: (context, index) => Consumer<ThemeViewModel>(
                       builder: (context, theme, child) => Text(
                         fizzBuzzProvider.getFizzBuzzList[index],

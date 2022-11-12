@@ -9,13 +9,13 @@ class ThemeViewModel extends ChangeNotifier {
   bool _loading = false;
   double _scrollPosition = 0.0;
 
-//getter
+  //getter
   bool get getDarkTheme => _darkTheme;
   bool get getStartAniamtion => _startAnimation;
   bool get getIsLoading => _loading;
   double get getScrollPosition => _scrollPosition;
 
-//setter
+  //setter
   set setAnimation(bool value) {
     _startAnimation = value;
     notifyListeners();

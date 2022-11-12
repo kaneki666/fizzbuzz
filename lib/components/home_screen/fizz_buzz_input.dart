@@ -22,11 +22,11 @@ class FizzBuzzInput extends StatelessWidget {
         validator: (value) {
           if (value!.isEmpty) {
             return "Can't be empty";
-          } else {
-            int number = int.tryParse(value)!;
-            if (number > 10000000) {
-              return "Must be less than 10000000";
-            }
+            // } else {
+            //   int number = int.tryParse(value)!;
+            //   if (number > 10000000) {
+            //     return "Must be less than 10000000";
+            //   }
           }
           return null;
         },
