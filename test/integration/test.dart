@@ -39,8 +39,7 @@ void main() {
             find.text("FizzBuzz"),
             findsWidgets,
           );
-          await addDelay(24000);
-          await tester.pumpAndSettle();
+          await addDelay(10);
         },
       );
     },
@@ -48,5 +47,5 @@ void main() {
 }
 
 Future<void> addDelay(int ms) async {
-  await Future<void>.delayed(Duration(milliseconds: ms));
+  await Future<void>.delayed(Duration(seconds: ms));
 }

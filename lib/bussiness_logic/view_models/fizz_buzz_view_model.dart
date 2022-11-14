@@ -54,6 +54,7 @@ class FizzBuzzViewModel extends ChangeNotifier {
     }
 
     setLoading();
+    FocusManager.instance.primaryFocus?.unfocus();
     notifyListeners();
   }
 
@@ -82,6 +83,7 @@ class FizzBuzzViewModel extends ChangeNotifier {
         start++;
       }
     }
+    FocusManager.instance.primaryFocus?.unfocus();
     notifyListeners();
   }
 }
